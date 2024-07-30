@@ -47,6 +47,10 @@ figure {
     cursor: pointer;
 }
 
+.delete-icon {
+    cursor: pointer;
+}
+
 .legenda_tarefas {
     opacity: 0;
     font-size: 20px;
