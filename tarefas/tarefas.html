@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="author" content="Luiz Phelipe">
+
+    <link rel="shortcut icon" href="../img/icon_tarefas.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/tarefas.css">
+
+    <title>Minhas Tarefas</title>
+</head>
+<body>
+    <header>
+        <section class="section_icon">
+            <figure>
+                <img src="../img/botao-adicionar.png" alt="botão de adicionar" height="30px" width="30px" id="icone_adicionar" class="icone">
+                <p class="legenda_tarefas">Adicionar</p>
+            </figure>
+        </section>
+
+        <div class="titulo">
+            <h1>Minhas tarefas</h1>
+        </div>
+
+        <section class="section_icon">
+            <figure>
+                <img src="../img/apagar.png" alt="botão de adicionar" height="30px" width="30px" id="icone_apagar" class="icone">
+                <p class="legenda_tarefas">Apagar</p>
+            </figure>
+        </section>
+    </header>
+
+    <main>
+
+        <!-- Adicionar tarefa -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Colocar tarefa</h2>
+
+                <form id="infoForm">
+
+                    <label for="materia">Matéria:</label>
+                    <select name="materia" id="materia">
+                        <option value="biologia">Biologia</option>
+                        <option value="desktop">Desenvolvimento de Sistemas para Desktop</option>
+                        <option value="movel">Desenvolvimento de Sistemas para Dispositivos Móveis</option>
+                        <option value="software">Desenvolvimento de Software</option>
+                        <option value="eletiva">Eletiva</option>
+                        <option value="fisica">Física</option>
+                        <option value="gramatica">Gramática</option>
+                        <option value="interpretacao">Interpretação Textual</option>
+                        <option value="linguagens">Estudos Avançados de Linguagens</option>
+                        <option value="matematica">Matemática</option>
+                        <option value="metodologia">Metodologia e Processos de Desenvolvimento de Software</option>
+                        <option value="planejamento">Planejamento de Redes</option>
+                        <option value="projeto_integrador">Projeto Integrador</option>
+                        <option value="projeto_vida">Projeto de Vida</option>
+                        <option value="quimica">Química</option>
+                        <option value="redacao">Redação</option>
+                        <option value="redes">Redes de Computadores</option>
+                        <option value="seguranca">Segurança de Redes</option>
+                        <option value="sistemas">Sistemas para Internet</option>
+                        <option value="SOredes">Sistemas Operacionais de Redes</option>
+                    </select>
+
+                    <br>
+                    <label for="descricao">Descrição:</label>
+                    <textarea name="descricao" id="descricao" required></textarea>
+
+                    <br>
+
+                    <label for="dia">Dia:</label>
+                    <input type="date" name="dia" id="dia" required>
+
+                    <br>
+
+                    <label for="hora">Hora:</label>
+                    <input type="time" name="hora" id="hora" value="23:59" required>
+
+                    <br>
+
+                    <div class="btn">
+                        <button type="submit" id="enviar">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <table id="tarefas">
+            <thead>
+                <tr>
+                    <th>
+                        Matéria
+                    </th>
+                    <th>
+                        Descrição
+                    </th>
+                    <th>
+                        Dia
+                    </th>
+                    <th>
+                        Hora
+                    </th>
+                    <th>
+                        Opções
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody id="corpo">
+
+            </tbody>
+        </table>
+    </main>
+
+    <script src="../js/tarefas.js"></script>
+    <script src="../js/permissao.js"></script>
+    <script src="../js/service-worker.js"></script>
+    <script src="../js/notificacao.js"></script>
+</body>
+</html>
