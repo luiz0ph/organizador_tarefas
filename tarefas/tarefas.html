@@ -17,6 +17,13 @@
     <header>
         <section class="section_icon">
             <figure>
+                <img src="../img/inicio.png" alt="botão para voltar para a página principal" height="30px" width="30px" id="icone_inicio" class="icone">
+                <p class="legenda_tarefas">Voltar</p>
+            </figure>
+        </section>
+
+        <section class="section_icon">
+            <figure>
                 <img src="../img/botao-adicionar.png" alt="botão de adicionar" height="30px" width="30px" id="icone_adicionar" class="icone">
                 <p class="legenda_tarefas">Adicionar</p>
             </figure>
@@ -31,7 +38,29 @@
                 <img src="../img/apagar.png" alt="botão de adicionar" height="30px" width="30px" id="icone_apagar" class="icone">
                 <p class="legenda_tarefas">Apagar</p>
             </figure>
+
+            <div class="modal" id="modal_apagar">
+                <div class="modal-content" id="conteudoModal">
+                    <span class="close" id="close_apagar">&times;</span>
+
+                    <div id="modal_content">
+                        <h2>Apagar todas as tarefas</h2>
+                        <div>
+                            <h3>&#9888; Esteje ciente que isso irá apagar todas as tarefas salvas! &#9888</h3>
+                        </div>
+                        <div>
+                            <span>
+                                <button id="apagar" class="btn_escolha">Apagar</button>
+                            </span>
+                            <span>
+                                <button id="cancelar" class="btn_escolha">Cancelar</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
     </header>
 
     <main>
@@ -39,7 +68,7 @@
         <!-- Adicionar tarefa -->
         <div id="myModal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" id="close_modal">&times;</span>
                 <h2>Colocar tarefa</h2>
 
                 <form id="infoForm">

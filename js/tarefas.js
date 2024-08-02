@@ -1,25 +1,53 @@
 let modal = document.getElementById("myModal");
 let adicionar = document.getElementById("icone_adicionar");
+let modalApagar = document.getElementById("modal_apagar");
 let apagarAll = document.getElementById("icone_apagar");
-let span = document.getElementsByClassName("close")[0];
+let closeModal = document.getElementById("close_modal");
+let closeApagar = document.getElementById("close_apagar");
 let tbody = document.getElementById('corpo');
+let apagar = document.getElementById('apagar');
+let cancelar = document.getElementById('cancelar');
 
-// Abrir o modal
+// Abrir o modal tarefas
 adicionar.onclick = function() {
     modal.style.display = "block";
 }
 
-span.onclick = function() {
+// Abri modal apagar
+apagarAll.onclick = function() {
+    modalApagar.style.display = "block";
+}
+
+closeModal.onclick = function() {
     modal.style.display = "none";
+}
+
+closeApagar.onclick = function() {
+    modalApagar.style.display = "none";
 }
 
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+
+    if (event.target == modalApagar) {
+        modalApagar.style.display = "none";
+    }
 }
 
-apagarAll.addEventListener('click', deleteAll);
+apagar.onclick = function() {
+    deleteAll();
+}
+
+cancelar.onclick = function() {
+    modalApagar.style.display = "none";
+}
+
+document.getElementById('icone_inicio').onclick = function() {
+    window.open('../index.html', '_self');
+}
+
 
 // Função para salvar tarefa no localStorage
 function saveTask(task) {
@@ -48,6 +76,7 @@ function deleteTask(line, row) {
 function deleteAll() {
     localStorage.clear();
     tbody.innerHTML = "";
+    modalApagar.style.display = "none";
 }
 
 // Função para converter a Data para padrão Brasileiro
@@ -158,12 +187,17 @@ document.getElementById("infoForm").onsubmit = function(event) {
             break;
     }
 
-    let task = { materia, descricao, dia, hora };
-    let lineNumber = saveTask(task);
-    addTaskToTable(lineNumber, task);
+    if (typeof localStorage !== "undefined") {
+        let task = { materia, descricao, dia, hora };
+        let lineNumber = saveTask(task);
+        addTaskToTable(lineNumber, task);
+    } else {
+        console.error("Navegador não compátivel com localStorage");
+    }
 
     document.getElementById("infoForm").reset();
     modal.style.display = "none";
+    modalApagar.style.display = "none";
 }
 
 // Carregar tarefas ao abrir o site

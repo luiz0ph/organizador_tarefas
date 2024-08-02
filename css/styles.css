@@ -48,8 +48,7 @@ figure {
     overflow: hidden;
     white-space: nowrap;
     width: 0;
-    display: inline-block;
-    border-right: 0.15rem solid #000;
+    display: inline-block;  
 }
 
 #icone:hover + .legenda_tarefas {
